@@ -6,7 +6,7 @@ on:
  push:
     branches:
         - main
-        
+
 permissions:
   contents: write
 
@@ -78,7 +78,7 @@ jobs:
           run: |
             sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}|" kubernetes/productcatalog/deploy.yaml
 
-        - name: Commit and Push Changes
+        - name: Commit and Push Change
           run: |
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
