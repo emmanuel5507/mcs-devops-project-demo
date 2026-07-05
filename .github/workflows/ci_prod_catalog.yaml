@@ -27,13 +27,15 @@ jobs:
           run: |
             cd src/product-catalog
             go mod download
-            go build -o product-catalog-service /src/product-catalog/main.go
+            go build -o product-catalog-service main.go
 
         - name: unit tests
-          run: go test /src/product-catalog/...
+          run: |
+            cd src/product-catalog
+            go test ./...
 
     code-quality:
-        runs-on: ubuntu-Latest
+        runs-on: ubuntu-latest
         steps: 
         - name: checkout code
           uses: actions/checkout@v4
