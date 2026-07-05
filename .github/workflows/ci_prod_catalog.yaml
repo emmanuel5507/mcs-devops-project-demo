@@ -87,4 +87,4 @@ jobs:
              git config --global user.email "github-actions[bot]@users.noreply.github.com"
              git add kubernetes/productcatalog/deploy.yaml
              git commit -m "[CI]-Update product-catalog image to ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}"
-             git push origin main
+             git push origin HEAD
